@@ -29,55 +29,7 @@ public class JIFMaterias extends javax.swing.JInternalFrame {
        
     }
 
-     private void llenarjTable() throws Exception{
-        this.rRHHBBFunciones.setRhComboXiiiSueldoPeriodoTO(shrimp.rrhh.delegate.RrhhDelegate.getInstance().getRhComboXiiiSueldoPeriodoTO());
-        this.bindingGroup.bind();//consigue los datos
-        this.jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(
-                org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_ONCE, this.rRHHBBFunciones.getRhComboXiiiSueldoPeriodoTO()
-               , jtblMateria);
-        
-        org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = this.jTableBinding.
-                addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${xiiiDescripcion}"));
-        columnBinding.setColumnName("Descripción");
-        columnBinding.setColumnClass(String.class);
-        columnBinding.setEditable(false);
 
-        org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding1 = this.jTableBinding.
-                addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${xiiiDesde}"));//${nombreAtributo}
-        columnBinding1.setColumnName("Fecha desde");
-        columnBinding1.setColumnClass(String.class);
-        columnBinding1.setEditable(false);
-        
-         org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding2 = this.jTableBinding.
-                addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${xiiiHasta}"));//${nombreAtributo}
-        columnBinding2.setColumnName("Fecha hasta");
-        columnBinding2.setColumnClass(String.class);
-        columnBinding2.setEditable(false);
-        
-         org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding3 = this.jTableBinding.
-                addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${xiiiFechaMaximaPago}"));//${nombreAtributo}
-        columnBinding3.setColumnName("Fecha Maximo Pago");
-        columnBinding3.setColumnClass(String.class);
-        columnBinding3.setEditable(false);
-
-        this.bindingGroup.addBinding(this.jTableBinding);
-        this.bindingGroup.bind();
-        
-        ///// PARA CAMBIAR EL ANCHO DE LAS COLUMNAS
-        javax.swing.table.TableColumn col = null;
-        col = jtblMateria.getColumnModel().getColumn(0);
-        col.setPreferredWidth(80);
-        col = jtblMateria.getColumnModel().getColumn(1);
-        col.setPreferredWidth(200);
-        /*col = jtblVendedor.getColumnModel().getColumn(2);
-        col.setPreferredWidth(100);*/
-
-        jtblMateria.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        // Metemos el modelo ordenable en la tabla.
-        javax.swing.table.TableRowSorter modeloOrdenado = new javax.swing.table.TableRowSorter(jtblMateria.getModel());
-        jtblMateria.setRowSorter(modeloOrdenado);
-
-    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
